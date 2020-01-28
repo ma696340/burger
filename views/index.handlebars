@@ -1,31 +1,42 @@
 
  <div class="row">
      <div class="col-sm-4">
-<ul>
+
     {{#each burgerData}}
 
     {{#unless devoured}}
-      <li>burger:{{burger_name}} 
-          <br>
-          <button>Devour!</button>
-      </li>
+
+    <div>
+      {{burger_name}} 
+        
+          <button data-id="{{id}}" class="devbtn">Devour!</button>
+    </div>
    {{/unless}}
     {{/each}}
-</ul>
+
 
      </div>
      <div class="col-sm-4"> middle section </div>
      <div class="col-sm-4">
 
-        <ul>
-            {{#each  burgerData}}
+    
+            {{#each burgerData}}
             {{#if devoured}}
-     <li>
-        devoured burger:  {{buger_name}}
-     </li>
+     <div>
+        Devoured:  {{burger_name}}
+     </div>
             {{/if}}
             {{/each}}
-        </ul>
+    
 
+     </div>
+ </div>
+
+
+ <div class="row">
+     <div class="col-sm-4">
+
+         <input type="text" id="burgerName">
+         <button id="addBurger">Add Burger</button>
      </div>
  </div>
